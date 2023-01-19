@@ -49,12 +49,12 @@ class SeedScene extends THREE.Scene {
         const start = 2.0;
         const factor = 0.2;
         const shape = new Shape(this, 13);
-        shape.draw_cube(0xffffff, 0, 0, 0, start);
+        // shape.draw_cube(0xffffff, 0, 0, 0, start);
         // shape.draw_cube(0x00ff00, 0, 0, 0, start + factor);
-        shape.draw_cube(0x0000ff, 0, 0, 0, start + factor * 1);
-        shape.draw_cube(0xffff00, 0, 0, 0, start + factor * 2);
-        shape.draw_cube(0xff0000, 0, 0, 0, start + factor * 3);
-        // shape.draw_cube(0x000000, 0, 0, 0, start + factor * 4);
+        // shape.draw_cube(0x0000ff, 0, 0, 0, start + factor * 1);
+        // shape.draw_cube(0xffff00, 0, 0, 0, start + factor * 2);
+        // shape.draw_cube(0xff0000, 0, 0, 0, start + factor * 3);
+        shape.draw_cube(0xff0000, 0, 0, 0, start + factor);
 
         this.add(shape);
 

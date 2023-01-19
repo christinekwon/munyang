@@ -1,4 +1,8 @@
 import { Group, Vector3 } from 'three';
+import { Line2 } from 'three/examples/jsm/lines/Line2.js';
+import { LineMaterial } from 'three/examples/jsm/lines/LineMaterial.js';
+import { LineGeometry } from 'three/examples/jsm/lines/LineGeometry.js';
+import * as GeometryUtils from 'three/examples/jsm/utils/GeometryUtils.js';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import { TWEEN } from 'three/examples/jsm/libs/tween.module.min.js';
 import MODEL from './flower.gltf';
@@ -16,7 +20,7 @@ class Shape extends Group {
             spin: this.spin.bind(this),
             twirl: 0,
             // rotationSpeed: Math.random(),
-            rotationSpeed: 0.3,
+            rotationSpeed: 0.5,
             // rotationStart: Math.random() * 1000
             rotationStart: 1000
         };
@@ -79,6 +83,7 @@ class Shape extends Group {
         line5.rotateX(Math.PI / 2);
 
         const cube = new THREE.Group();
+        // cube.add(line0);
         cube.add(line0, line1, line2, line3, line4, line5);
         // cube.position.set(0, 0, 0);
         // for (let c of cube.children) {
@@ -89,6 +94,36 @@ class Shape extends Group {
     }
 
     draw_cube(color, x, y, z, scale) {
+        // const positions = [];
+        //         for (let c of this.cube.children) {
+        //             positions.push(...c.geometry.attributes.position.array)
+
+        //         }
+        //         let curveGeometry = new THREE.TubeGeometry(curve, 200, 1, 8, false);
+        //         let curveMesh = new THREE.Mesh(curveGeometry, this.material);
+        //         this.add(curveMesh)
+
+        // const positions = [];
+        // for (let c of this.cube.children) {
+        //     positions.push(...c.geometry.attributes.position.array)
+
+        // }
+
+        // // console.log(positions)
+        // const geometry = new LineGeometry();
+        // geometry.setPositions(positions);
+
+        // const matLine = new LineMaterial({
+        //     color: 0xffffff,
+        //     linewidth: 5, // in pixels
+        //     vertexColors: true,
+        //     dashed: false
+        // });
+
+        // const line = new Line2(geometry, matLine);
+        // line.computeLineDistances();
+        // this.add(line);
+
         const cube = this.cube.clone();
         cube.position.set(x, y, z);
         cube.scale.multiplyScalar(scale);

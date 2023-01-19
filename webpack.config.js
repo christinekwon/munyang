@@ -16,8 +16,7 @@ module.exports = {
         warnings: false
     },
     module: {
-        rules: [
-            {
+        rules: [{
                 test: /\.js$/,
                 use: 'babel-loader',
                 exclude: path.resolve(__dirname, './node_modules/'),
@@ -36,11 +35,9 @@ module.exports = {
                 type: 'javascript/auto',
                 test: /\.(json)/,
                 exclude: path.resolve(__dirname, './node_modules/'),
-                use: [
-                    {
-                        loader: 'file-loader',
-                    },
-                ],
+                use: [{
+                    loader: 'file-loader',
+                }, ],
             },
         ],
     },
@@ -52,6 +49,6 @@ module.exports = {
         },
     },
     plugins: [
-        new HtmlWebpackPlugin({ title: pkg.title, favicon: 'src/favicon.ico' }),
+        new HtmlWebpackPlugin({ title: pkg.title, favicon: 'src/favicon.png' }),
     ],
 };
